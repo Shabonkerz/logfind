@@ -1,0 +1,40 @@
+{
+  "name": "logfind",
+  "version": "1.0.0",
+  "description": "CLI tool for log file parsing",
+  "homepage": "",
+  "repository": "Shabonkerz/logfind",
+  "author": "Asa Rudick",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "util",
+    "logfind",
+    "log",
+    "find",
+    "parse"
+  ],
+  "scripts": {
+    "test": "gulp"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^0.8.0",
+    "gulp-istanbul": "^0.8.1",
+    "gulp-jscs": "^1.1.0",
+    "gulp-jshint": "^1.5.3",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "dependencies": {
+    "glob": "^5.0.10",
+    "lodash": "^3.9.3",
+    "meow": "^3.3.0",
+    "package-json": "^1.2.0"
+  }
+}
