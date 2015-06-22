@@ -38,22 +38,22 @@ describe( 'LogFind unit tests.', function () {
 
     it( 'LogFind.find should return array of length 0.', function () {
         var options = {o: false};
-        var input = ['^lkjsdflskjdf$'];
-        var foundFiles = logFinder.find(options, input);
+        var search = '^lkjsdflskjdf$';
+        var foundFiles = logFinder.find(options, search);
         assert( foundFiles.length === 0, 'we expected no files in result.' );
     } );
 
     it( 'LogFind.find should return array of length 1 for `OR` mode.', function () {
         var options = {o: true};
-        var input = ['something rickshaw'];
-        var foundFiles = logFinder.find(options, input);
+        var search = 'something rickshaw';
+        var foundFiles = logFinder.find(options, search);
         assert( foundFiles.length === 1, 'we expected only 1 file in result.' );
     } );
 
     it( 'LogFind.find should return array of length 1.', function () {
         var options = {o: false};
-        var input = ['^rickshaw$'];
-        var foundFiles = logFinder.find(options, input);
+        var search = '^rickshaw$';
+        var foundFiles = logFinder.find(options, search);
         assert( foundFiles.length === 1, 'we expected only 1 file in result.' );
     } );
 
