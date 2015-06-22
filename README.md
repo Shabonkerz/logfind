@@ -1,30 +1,23 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> 
 
 
-## Install
+## CLI Usage
+1. Add `.logfind` to root of your desired directory. (TODO: Add `logfind init` command.)
+2. Whitelist files to search by adding one glob or filename per line to `.logfind`. (TODO: Add `logfind add <file|glob>` command.)
+3. Run `logfind <string|regex>` to search the files. (TODO: Change this to `logfind find <string|regex>`.)
 
-```sh
-$ npm install --save 
-```
-
-
-## Usage
-
+## Module Usage
 ```js
-var  = require('');
+...
+var logfind = require('logfind');
+var logfinder = new LogFind();
 
-('Rainbow');
+// 'OR' mode disabled(default).
+var options = {o: false};
+var search = '^rickshaw$';
+var foundFiles = logfinder.find(options, search);
+...
 ```
 
 ## License
 
-MIT © []()
-
-
-[npm-image]: https://badge.fury.io/js/.svg
-[npm-url]: https://npmjs.org/package/
-[travis-image]: https://travis-ci.org//.svg?branch=master
-[travis-url]: https://travis-ci.org//
-[daviddm-image]: https://david-dm.org//.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//
+MIT © [Asa Rudick]()
