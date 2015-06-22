@@ -1,9 +1,11 @@
 'use strict';
 var assert = require('assert');
-var  = require('../lib');
+var LogFind = require('../lib/logfind');
+var logFinder = new LogFind();
 
-describe('', function () {
-  it('should have unit test!', function () {
-    assert(false, 'we expected this package author to add actual unit tests.');
+describe('LogFind unit tests.', function () {
+  it('LogFind.getFileMatches should return 2 files.', function () {
+      var files = logFinder.getFileMatches();
+      assert(files.length == 2, 'we expected 2 files.');
   });
 });
