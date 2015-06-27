@@ -5,7 +5,32 @@ var LogFind = require('../lib/logfind');
 var logFinder = new LogFind();
 
 describe( 'LogFind unit tests.', function () {
-    var pattern = new RegExp(/^rickshaw$/gm);
+    var pattern = /^rickshaw$/gm;
+
+    it( 'LogFind.init should create .logfind.', function () {
+
+        fs.stat('.logfind', function (err, stats) {
+
+            // Error? Must've not found the file.
+            if ( !err )
+            {
+                // Delete if already exists.
+                fs.unlinkSync(logFinder.logfindFilename);
+            }
+
+            // Create file.
+            logFinder.init();
+            assert( fs.existsSync(logFinder.logfindFileName), 'we expected ' + logFinder.logfindFilename + ' to exist' );
+        });
+
+    } );
+
+    it( 'LogFind.add should add `test.txt`, `test2.txt` to .logfind.', function () {
+        var files = ['test.txt', 'test2.txt'];
+        logFinder.add( files );
+        var lines = fs.readFileSync(logFinder.logfindFileName).toString().split('\n').filter(function (line) { return line !== '';});
+        assert( lines.length === 2, 'we expected 2 lines in result.' );
+    } );
 
     it( 'LogFind.getFileMatches should return 2 files.', function () {
         var files = logFinder.getFileMatches();
