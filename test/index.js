@@ -25,7 +25,7 @@ describe( 'LogFind unit tests.', function () {
 
     it( 'LogFind.findFilesWithPattern should return array of length 0.', function () {
         var files = ['test.txt', 'test2.txt'];
-        var pattern = new RegExp(/^slkdjklsjd$/gm);
+        var pattern = /^slkdjklsjd$/gm;
         var foundFiles = logFinder.findFilesWithPattern(pattern, files);
         assert( foundFiles.length === 0, 'we expected no files in result.' );
     } );
