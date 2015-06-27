@@ -9,19 +9,26 @@ describe( 'LogFind unit tests.', function () {
 
     it( 'LogFind.init should create .logfind.', function () {
 
-        fs.stat('.logfind', function (err, stats) {
+        // Delete if file exists.
+        try {
+            fs.unlinkSync(logFinder.logfindFilename);
+        } catch (e) {
+            // pass
+        }
 
-            // Error? Must've not found the file.
-            if ( !err )
-            {
-                // Delete if already exists.
-                fs.unlinkSync(logFinder.logfindFilename);
-            }
+        // Create file.
+        logFinder.init();
 
-            // Create file.
-            logFinder.init();
-            assert( fs.existsSync(logFinder.logfindFileName), 'we expected ' + logFinder.logfindFilename + ' to exist' );
-        });
+        // Test for file existence.
+        var exists = false;
+
+        try {
+            exists = fs.statSync(logFinder.logfindFileName).isFile();
+        } catch (e) {
+            exists = !e;
+        } finally {
+            assert( exists , 'we expected ' + logFinder.logfindFilename + ' to exist' );
+        }
 
     } );
 
