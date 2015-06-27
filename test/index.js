@@ -1,6 +1,7 @@
 'use strict';
 var assert = require( 'assert' );
-var LogFind = require( '../lib/logfind' );
+var fs = require('fs-extra');
+var LogFind = require('../lib/logfind');
 var logFinder = new LogFind();
 
 describe( 'LogFind unit tests.', function () {
