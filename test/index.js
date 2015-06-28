@@ -91,7 +91,7 @@ describe('LogFind unit tests.', function () {
 			o: false
 		};
 		var search = '^lkjsdflskjdf$';
-		var foundFiles = logFinder.find(options, search);
+		var foundFiles = logFinder.find(search, options);
 		assert(foundFiles.length === 0,
 			'we expected no files in result.');
 	});
@@ -102,7 +102,7 @@ describe('LogFind unit tests.', function () {
 				o: true
 			};
 			var search = 'something rickshaw';
-			var foundFiles = logFinder.find(options, search);
+			var foundFiles = logFinder.find(search, options);
 			assert(foundFiles.length === 1,
 				'we expected only 1 file in result.');
 		});
@@ -112,7 +112,7 @@ describe('LogFind unit tests.', function () {
 			o: false
 		};
 		var search = '^rickshaw$';
-		var foundFiles = logFinder.find(options, search);
+		var foundFiles = logFinder.find(search, options);
 		assert(foundFiles.length === 1,
 			'we expected only 1 file in result.');
 	});
