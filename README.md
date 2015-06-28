@@ -1,9 +1,11 @@
 
 
 ## CLI Usage
-1. Run `logfind init`.
-2. Add files to search using `logfind add <file|glob>`
-3. Run `logfind find <string|regex>` to search the files.
+1. Clone repository.
+2. Run `npm link`
+3. Run `logfind init`.
+4. Add files to search using `logfind add <file|glob>`
+5. Run `logfind find <string|regex>` to search the files.
 
 ## Module Usage
 ```js
