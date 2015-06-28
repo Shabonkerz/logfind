@@ -11,6 +11,9 @@
   "files": [
     "lib"
   ],
+  "bin": {
+      "logfind": "lib/cli.js"
+  },
   "keywords": [
     "cli-app",
     "cli",
@@ -23,7 +26,7 @@
   "scripts": {
     "test": "gulp"
   },
-  "main": "lib/cli.js",
+  "main": "lib/logfind.js",
   "private": "true",
   "license": "MIT",
   "devDependencies": {
