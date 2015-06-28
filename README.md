@@ -1,9 +1,9 @@
 
 
 ## CLI Usage
-1. Add `.logfind` to root of your desired directory. (TODO: Add `logfind init` command.)
-2. Whitelist files to search by adding one glob or filename per line to `.logfind`. (TODO: Add `logfind add <file|glob>` command.)
-3. Run `logfind <string|regex>` to search the files. (TODO: Change this to `logfind find <string|regex>`.)
+1. Run `logfind init`.
+2. Add files to search using `logfind add <file|glob>`
+3. Run `logfind find <string|regex>` to search the files.
 
 ## Module Usage
 ```js
