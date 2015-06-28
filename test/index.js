@@ -11,7 +11,7 @@ describe('LogFind unit tests.', function () {
 
 		// Delete if file exists.
 		try {
-			fs.unlinkSync(logFinder.logfindFilename);
+			fs.unlinkSync(logFinder.logfindFileName);
 		} catch (e) {
 			// pass
 		}
