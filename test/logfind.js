@@ -46,7 +46,22 @@ describe('LogFind unit tests.', function () {
 				});
 			assert(lines.length === 2,
 				'we expected 2 lines in result.');
-		});
+		}
+	);
+
+	it('LogFind.add should throw error.', function () {
+		var error;
+
+		try {
+			logFinder.add([]);
+		} catch (e) {
+			error = e;
+		} finally {
+			assert(error != null,
+				'we expected an error');
+		}
+
+	});
 
 	it('LogFind.getFileMatches should return 2 files.', function () {
 		var files = logFinder.getFileMatches();
@@ -75,7 +90,8 @@ describe('LogFind unit tests.', function () {
 				files);
 			assert(foundFiles.length === 0,
 				'we expected no files in result.');
-		});
+		}
+	);
 
 	it('LogFind.findFilesWithPattern should return array of length 1.',
 		function () {
@@ -84,7 +100,8 @@ describe('LogFind unit tests.', function () {
 				files);
 			assert(foundFiles.length === 1,
 				'we expected only 1 file in result.');
-		});
+		}
+	);
 
 	it('LogFind.find should return array of length 0.', function () {
 		var options = {
@@ -105,7 +122,8 @@ describe('LogFind unit tests.', function () {
 			var foundFiles = logFinder.find(search, options);
 			assert(foundFiles.length === 1,
 				'we expected only 1 file in result.');
-		});
+		}
+	);
 
 	it('LogFind.find should return array of length 1.', function () {
 		var options = {
@@ -115,6 +133,20 @@ describe('LogFind unit tests.', function () {
 		var foundFiles = logFinder.find(search, options);
 		assert(foundFiles.length === 1,
 			'we expected only 1 file in result.');
+	});
+
+	it('LogFind.add should throw error.', function () {
+		var error;
+
+		try {
+			logFinder.find('', {});
+		} catch (e) {
+			error = e;
+		} finally {
+			assert(error != null,
+				'we expected an error');
+		}
+
 	});
 
 });
