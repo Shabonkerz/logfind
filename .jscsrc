@@ -19,5 +19,5 @@
   "disallowKeywordsOnNewLine": ["else"],
   "requireLineFeedAtFileEnd": true,
   "excludeFiles": ["node_modules/**"],
-  "validateIndentation": 1
+  "validateIndentation": "\t"
 }
